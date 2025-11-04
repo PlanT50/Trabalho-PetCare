@@ -29,8 +29,4 @@ public class Animal{
         return proprietario;
     }
 
-    public void agendarconsulta(){
-
-    }
-
 }
