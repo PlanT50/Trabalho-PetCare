@@ -1,4 +1,4 @@
-public class Consulta implements Agendavel {
+/*public class Consulta implements Agendavel {
     private String data;
     private int hora;
     private Proprietario proprietario;
@@ -16,4 +16,4 @@ public class Consulta implements Agendavel {
         this.hora = hora;
         System.out.println("Consulta agendada para dia" + data + "ás " + hora);
     }
-}
+}*/

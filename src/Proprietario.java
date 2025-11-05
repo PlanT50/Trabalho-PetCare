@@ -45,5 +45,19 @@ public class Proprietario  {
         return animais;
     }
 
+    public void exibirAnimals(){
+        if (animais.isEmpty()) {
+            System.out.println("Nenhum animal encontrado");
+        }
+        else {
+            for (Animal animal : animais) {
+                System.out.println(animal.getEspecie());
+                System.out.println(animal.getHistorico());
+                System.out.println(animal.getIdade());
+                System.out.println(animal.getProprietario());
+            }
+        }
+    }
+
 
 }
