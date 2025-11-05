@@ -11,10 +11,11 @@ public class Consulta implements Agendavel {
         this.animal = animal;
     }
     @Override
-    public void agendar(String data, String hora){
+    public void agendar(String data, String hora,) {
         this.data = data;
         this.hora = hora;
-        System.out.println("Consulta agendada para dia" + data + "ás " + hora);
+        System.out.println("Consulta agendada para " + animal.getEspecie() + " do proprietário " + proprietario.getNome() + " no dia "
+                data + " às " + hora );
     }
     @Override
     public void cancelar(){

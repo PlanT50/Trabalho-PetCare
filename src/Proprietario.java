@@ -1,16 +1,24 @@
 import java.util.ArrayList;
 
 public class Proprietario  {
+    private String nome;
     private int contato;
     private String assinatura;
     private boolean Vip;
     private ArrayList<Animal> animais;
 
-    public Proprietario(int contato, String assinatura, boolean Vip) {
+    public Proprietario(String nome, int contato, String assinatura, boolean Vip) {
+        this.nome = nome;
         this.contato = contato;
         this.assinatura = assinatura;
         this.Vip = Vip;
         animais = new ArrayList<>();
+    }
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public int getcontato(){
