@@ -5,7 +5,7 @@ public class Proprietario  {
     private int contato;
     private String assinatura;
     private boolean Vip;
-    private ArrayList<Animal> animais;
+    private ArrayList<Animal> animais = new ArrayList<>();
 
     public Proprietario(String nome, int contato, String assinatura, boolean Vip) {
         this.nome = nome;

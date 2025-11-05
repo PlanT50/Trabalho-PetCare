@@ -1,9 +1,12 @@
+import java.util.ArrayList;
+
 public class Animal{
     private String nome;
     private String especie;
     private int idade;
     private String historico;
     private Proprietario proprietario;
+    private ArrayList<Consulta> consultas = new ArrayList<>();
 
     public Animal(String nome,String especie, int idade, String historico, Proprietario proprietario){
         this.nome = nome;
@@ -35,6 +38,20 @@ public class Animal{
     }
     public Proprietario getProprietario() {
         return proprietario;
+    }
+    public void AdicionarConsulta(Consulta consulta){
+        consultas.add(consulta);
+    }
+    public void ExibirConsulta(){
+        if(consultas.isEmpty()){
+            System.out.println("Nenhum consulta agendado");
+        }
+        else {
+            System.out.println("Consultas de " + getNome() + " da espécie " + getEspecie() + " agendadas: ");
+            for(Consulta consulta : consultas){
+             System.out.println("Data: " + consulta.getData() + " Hora: " + consulta.getHora());
+            }
+        }
     }
 
 }
