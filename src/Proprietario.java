@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Proprietario {
+public class Proprietario  {
     private int contato;
     private String assinatura;
     private boolean Vip;
@@ -35,6 +35,14 @@ public class Proprietario {
 
     public void setVip(boolean Vip){
         this.Vip = Vip;
+    }
+
+    public void addAnimal(Animal animal){
+        animais.add(animal);
+    }
+
+    public ArrayList<Animal> getAnimais(){
+        return animais;
     }
 
 
