@@ -21,6 +21,12 @@ public class Consulta implements Agendavel {
         setData(null);
         setHora(null);
     }
+    @Override
+    public void remarcar(String novaData, String novahora){
+        setData(novaData);
+        setHora(novahora);
+    }
+
     public String getData(){
         return data;
     }
