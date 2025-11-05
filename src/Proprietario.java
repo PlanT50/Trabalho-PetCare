@@ -1,7 +1,7 @@
 public class Proprietario {
-    String nome;
-    int contato;
-    String assinatura;
-    boolean Vip;
+    private int contato;
+    private String assinatura;
+    private boolean Vip;
+
 
 }

@@ -1,10 +1,10 @@
 public class Animal{
-    String especie;
-    int idade;
-    String historico;
-    String proprietario;
+    private String especie;
+    private int idade;
+    private String historico;
+    private Proprietario proprietario;
 
-    public Animal(String especie, int idade, String historico, String proprietario){
+    public Animal(String especie, int idade, String historico, Proprietario proprietario){
         this.especie = especie;
         this.idade = idade;
         this.historico = historico;
@@ -25,7 +25,7 @@ public class Animal{
     public void setHistorico(String historico){
         this.historico = historico;
     }
-    public String getProprietario() {
+    public Proprietario getProprietario() {
         return proprietario;
     }
 
