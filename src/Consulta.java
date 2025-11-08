@@ -45,5 +45,4 @@ public class Consulta implements Agendavel {
         System.out.println("Hora da consulta: " + hora);
         System.out.println("Paciente: " + animal.getNome());
     }
-
 }
