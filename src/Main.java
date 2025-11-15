@@ -8,7 +8,6 @@ public class Main {
         int opcao = 0;
         int assinatura = 0;
         ArrayList<Proprietario> proprietarios = new ArrayList<>();
-        ArrayList<Proprietario> proprietarios = new ArrayList<>();
         ArrayList<Animal> animais = new ArrayList<>();
 
 
@@ -38,7 +37,7 @@ public class Main {
                     System.out.println("1 - Normal");
                     System.out.println("2 - VIP");
                     int opcPlano = scan.nextInt();
-                    scan.nextLine(); // limpar buffer
+                    scan.nextLine();
 
                     String assinaturaEscolhida;
                     boolean vip;
