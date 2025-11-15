@@ -21,6 +21,24 @@ public class Main {
 
             switch (opcao) {
                 case 1:
+                    System.out.println("Cadastro Proprietário");
+                    break;
+
+                case 2:
+                    System.out.println("Cadastro Animal");
+                    break;
+
+                case 3:
+                    System.out.println("Agendar Consultas");
+                    break;
+
+                case 4:
+                    System.out.println("Verificar Consultas");
+                    break;
+
+                case 5:
+                    System.out.println("Saindo...");
+
             }
 
 
