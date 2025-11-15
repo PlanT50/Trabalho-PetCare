@@ -8,6 +8,8 @@ public class Main {
         int opcao = 0;
         int assinatura = 0;
         ArrayList<Proprietario> proprietarios = new ArrayList<>();
+        ArrayList<Proprietario> proprietarios = new ArrayList<>();
+        ArrayList<Animal> animais = new ArrayList<>();
 
 
         while (opcao != 5) {
