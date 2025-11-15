@@ -2,15 +2,13 @@ import java.util.ArrayList;
 
 public class Animal{
     private String nome;
-    private String especie;
     private int idade;
     private String historico;
     private Proprietario proprietario;
     private ArrayList<Consulta> consultas = new ArrayList<>();
 
-    public Animal(String nome,String especie, int idade, String historico, Proprietario proprietario){
+    public Animal(String nome, int idade, String historico, Proprietario proprietario){
         this.nome = nome;
-        this.especie = especie;
         this.idade = idade;
         this.historico = historico;
         this.proprietario = proprietario;
@@ -20,9 +18,6 @@ public class Animal{
     }
     public void setNome(String nome) {
         this.nome = nome;
-    }
-    public String getEspecie() {
-        return especie;
     }
     public int getIdade() {
         return idade;
@@ -47,7 +42,7 @@ public class Animal{
             System.out.println("Nenhum consulta agendado");
         }
         else {
-            System.out.println("Consultas de " + getNome() + " da espécie " + getEspecie() + " agendadas: ");
+            System.out.println("Consultas de " + getNome()  + " agendadas: ");
             for(Consulta consulta : consultas){
              System.out.println("Data: " + consulta.getData() + " Hora: " + consulta.getHora());
             }
