@@ -4,8 +4,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         int opcao = 0;
+        int assinatura = 0;
 
 
         while (opcao != 5) {
@@ -16,12 +17,25 @@ public class Main {
             System.out.println("4 - Verificar Consultas");
             System.out.println("5 - Sair");
 
-            opcao = sc.nextInt();
-            sc.nextLine();
+            opcao = scan.nextInt();
+            assinatura = scan.nextInt();
+
+            scan.nextLine();
 
             switch (opcao) {
                 case 1:
                     System.out.println("Cadastro Proprietário");
+                    System.out.println("Digite seu nome:");
+
+                    String nome = scan.nextLine();
+
+                    System.out.println("Digite seu Contato: ");
+                    int contato = scan.nextInt();
+
+                    System.out.println("Qual plano deseja: ");
+
+
+                    Proprietario p = new Proprietario(nome,contato,)
                     break;
 
                 case 2:
@@ -38,6 +52,7 @@ public class Main {
 
                 case 5:
                     System.out.println("Saindo...");
+                    break;
 
             }
 
