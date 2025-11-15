@@ -11,7 +11,6 @@ public class Pagamento implements Pagavel {
 
     @Override
     public double desconto() {
-        // VIPs têm 10% de desconto
         if (proprietario.getVip()) {
             return valor * 0.10;
         }
