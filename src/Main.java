@@ -7,6 +7,7 @@ public class Main {
 
         ArrayList<Proprietario> proprietarios = new ArrayList<>();
         ArrayList<Animal> animais = new ArrayList<>();
+        ArrayList<Consulta> consultas = new ArrayList<>();
 
         Scanner scan = new Scanner(System.in);
         int opcao = 0;
@@ -67,6 +68,7 @@ public class Main {
                     System.out.println("Qual a idade do animal");
 
                     int idadeAnimal = scan.nextInt();
+                    scan.nextLine();
 
                     System.out.println("Qual o histórico de Saúde do animal:");
 
@@ -85,14 +87,57 @@ public class Main {
 
                     Animal m = new Animal(nomeAnimal, idadeAnimal, historicoAnimal, escolhido);
                     escolhido.addAnimal(m);
+                    animais.add(m);
                     break;
 
                 case 3:
-                    System.out.println("Agendar Consultas");
+                    if (animais.isEmpty()) {
+                        System.out.println("Nenhum animal cadastrado!");
+                        break;
+                    }
+
+                    System.out.println("Agendar Consulta");
+                    System.out.println("Escolha o animal:");
+
+                    for (int i = 0; i < animais.size(); i++) {
+                        System.out.println((i + 1) + " - " + animais.get(i).getNome());
+                    }
+
+                    int indiceAnimal = scan.nextInt() - 1;
+                    scan.nextLine();
+
+                    Animal animalSelecionado = animais.get(indiceAnimal);
+
+                    System.out.println("Digite a data da consulta (dd/mm):");
+                    String dataConsulta = scan.nextLine();
+
+                    System.out.println("Digite a hora da consulta (hh:mm):");
+                    String horaConsulta = scan.nextLine();
+
+                    Consulta c = new Consulta(dataConsulta, horaConsulta, animalSelecionado);
+
+                    animalSelecionado.AdicionarConsulta(c);
+                    consultas.add(c);
+
+                    System.out.println("Consulta agendada com sucesso!");
                     break;
 
                 case 4:
-                    System.out.println("Verificar Consultas");
+                    if (consultas.isEmpty()) {
+                        System.out.println("Nenhuma consulta agendada.");
+                        break;
+                    }
+
+                    System.out.println("Consultas marcadas:");
+
+                    for (Consulta con : consultas) {
+                        System.out.println("---------------------");
+                        System.out.println("Animal: " + con.getAnimal().getNome());
+                        System.out.println("Proprietário: " + con.getAnimal().getProprietario().getNome());
+                        System.out.println("Data: " + con.getData());
+                        System.out.println("Hora: " + con.getHora());
+                    }
+
                     break;
 
                 case 5:
