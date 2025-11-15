@@ -35,7 +35,7 @@ public class Main {
                     System.out.println("Qual plano deseja: ");
 
 
-                    Proprietario p = new Proprietario(nome,contato,)
+                    Proprietario p = new Proprietario(nome,contato,);
                     break;
 
                 case 2:

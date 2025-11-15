@@ -53,18 +53,16 @@ public class Proprietario  {
         return animais;
     }
 
-    public void exibirAnimals(){
+    public void exibirAnimais() {
         if (animais.isEmpty()) {
-            System.out.println("Nenhum animal encontrado");
-        }
-        else {
+            System.out.println("Nenhum animal encontrado.");
+        } else {
+            System.out.println("Animais do proprietário " + nome + ":");
             for (Animal animal : animais) {
-                System.out.println(animal.getHistorico());
-                System.out.println(animal.getIdade());
-                System.out.println(animal.getProprietario());
+                System.out.println("------------------------------");
+                System.out.println("Nome: " + animal.getNome());
+                System.out.println("Idade: " + animal.getIdade());
+                System.out.println("Histórico: " + animal.getHistorico());
             }
         }
-    }
-
-
-}
+    }}
