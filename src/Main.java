@@ -22,6 +22,7 @@ public class Main {
             opcao = scan.nextInt();
             scan.nextLine();
 
+
             switch (opcao) {
                 case 1:
                     System.out.println("Cadastro Proprietário");
@@ -150,4 +151,5 @@ public class Main {
             }
         }
     }
+
 }
