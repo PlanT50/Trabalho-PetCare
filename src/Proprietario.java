@@ -59,7 +59,6 @@ public class Proprietario  {
         }
         else {
             for (Animal animal : animais) {
-                System.out.println(animal.getEspecie());
                 System.out.println(animal.getHistorico());
                 System.out.println(animal.getIdade());
                 System.out.println(animal.getProprietario());
