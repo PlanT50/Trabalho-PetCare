@@ -40,6 +40,21 @@ public class Main {
 
                 case 2:
                     System.out.println("Cadastro Animal");
+                    System.out.println("Digite seu nome:");
+
+                    String nomeAnimal = scan.nextLine();
+
+                    System.out.println("Qual a idade do animal");
+
+                    String idadeAnimal = scan.nextLine();
+
+                    System.out.println("Qual o histórico de Saúde do animal:");
+
+                    String historicoAnimal = scan.nextLine();
+
+
+
+                    Animal m = new Animal(nomeAnimal, idadeAnimal, historicoAnimal,)
                     break;
 
                 case 3:
