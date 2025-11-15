@@ -1,4 +1,3 @@
-import java.awt.desktop.SystemEventListener;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,8 +10,6 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
         int opcao = 0;
-        int assinatura = 0;
-
 
         while (opcao != 5) {
             System.out.println("========== PET CARE ==========");
@@ -23,14 +20,12 @@ public class Main {
             System.out.println("5 - Sair");
 
             opcao = scan.nextInt();
-
             scan.nextLine();
 
             switch (opcao) {
                 case 1:
                     System.out.println("Cadastro Proprietário");
                     System.out.println("Digite seu nome:");
-
                     String nome = scan.nextLine();
 
                     System.out.println("Digite seu Contato: ");
@@ -53,35 +48,40 @@ public class Main {
                         vip = false;
                     }
 
-
-
                     Proprietario p = new Proprietario(nome, contato, assinaturaEscolhida, vip);
                     proprietarios.add(p);
                     break;
 
                 case 2:
-                    System.out.println("Cadastro Animal");
-                    System.out.println("Digite seu nome:");
+                    if (proprietarios.isEmpty()) {
+                        System.out.println("Nenhum proprietário cadastrado! Cadastre um primeiro.");
+                        break;
+                    }
 
+                    System.out.println("Cadastro Animal");
+                    System.out.println("Digite o nome do animal:");
                     String nomeAnimal = scan.nextLine();
 
-                    System.out.println("Qual a idade do animal");
-
+                    System.out.println("Qual a idade do animal:");
                     int idadeAnimal = scan.nextInt();
                     scan.nextLine();
 
                     System.out.println("Qual o histórico de Saúde do animal:");
-
                     String historicoAnimal = scan.nextLine();
 
-                    System.out.println("Qual é o proprietário: ");
+                    System.out.println("Escolha o proprietário:");
 
-                    for(int i=0; i < proprietarios.size(); i++){
-                        System.out.println( i + "-" + proprietarios.get(i).getNome());
+                    for (int i = 0; i < proprietarios.size(); i++) {
+                        System.out.println(i + " - " + proprietarios.get(i).getNome());
                     }
 
                     int indice = scan.nextInt();
                     scan.nextLine();
+
+                    if (indice < 0 || indice >= proprietarios.size()) {
+                        System.out.println("Proprietário inválido!");
+                        break;
+                    }
 
                     Proprietario escolhido = proprietarios.get(indice);
 
@@ -100,11 +100,16 @@ public class Main {
                     System.out.println("Escolha o animal:");
 
                     for (int i = 0; i < animais.size(); i++) {
-                        System.out.println((i + 1) + " - " + animais.get(i).getNome());
+                        System.out.println(i + " - " + animais.get(i).getNome());
                     }
 
-                    int indiceAnimal = scan.nextInt() - 1;
+                    int indiceAnimal = scan.nextInt();
                     scan.nextLine();
+
+                    if (indiceAnimal < 0 || indiceAnimal >= animais.size()) {
+                        System.out.println("Animal inválido!");
+                        break;
+                    }
 
                     Animal animalSelecionado = animais.get(indiceAnimal);
 
@@ -116,7 +121,7 @@ public class Main {
 
                     Consulta c = new Consulta(dataConsulta, horaConsulta, animalSelecionado);
 
-                    animalSelecionado.AdicionarConsulta(c);
+                    animalSelecionado.adicionarConsulta(c);
                     consultas.add(c);
 
                     System.out.println("Consulta agendada com sucesso!");
@@ -137,16 +142,12 @@ public class Main {
                         System.out.println("Data: " + con.getData());
                         System.out.println("Hora: " + con.getHora());
                     }
-
                     break;
 
                 case 5:
                     System.out.println("Saindo...");
                     break;
-
             }
-
-
         }
     }
 }

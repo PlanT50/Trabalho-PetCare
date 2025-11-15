@@ -14,8 +14,9 @@ public class Consulta implements Agendavel {
     public void agendar(String data, String hora) {
         this.data = data;
         this.hora = hora;
-        System.out.println("Consulta agendada para " + " do proprietário " + animal.getProprietario().getNome() + " no dia " +
-                data + " às " + hora );
+        System.out.println("Consulta agendada para " + animal.getNome() +
+                " do proprietário " + animal.getProprietario().getNome() +
+                " no dia " + data + " às " + hora);
     }
     @Override
     public void cancelar(){

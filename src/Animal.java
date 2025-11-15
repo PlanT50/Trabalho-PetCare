@@ -34,10 +34,10 @@ public class Animal{
     public Proprietario getProprietario() {
         return proprietario;
     }
-    public void AdicionarConsulta(Consulta consulta){
+    public void adicionarConsulta(Consulta consulta){
         consultas.add(consulta);
     }
-    public void ExibirConsulta(){
+    public void exibirConsulta(){
         if(consultas.isEmpty()){
             System.out.println("Nenhum consulta agendado");
         }
