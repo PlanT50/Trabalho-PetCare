@@ -33,21 +33,37 @@ public class Main {
                     int contato = scan.nextInt();
 
                     System.out.println("Qual plano deseja?");
-                    System.out.println("1 - Normal");
-                    System.out.println("2 - VIP");
+                    System.out.println("1 - Core");
+                    System.out.println("2 - Essential");
+                    System.out.println("3 - Premium");
+                    System.out.println("4 - Ultimate");
                     int opcPlano = scan.nextInt();
                     scan.nextLine();
 
                     String assinaturaEscolhida;
                     boolean vip;
 
-                    if (opcPlano == 2) {
-                        assinaturaEscolhida = "VIP";
-                        vip = true;
-                    } else {
-                        assinaturaEscolhida = "Normal";
-                        vip = false;
-                    }
+                    if (opcPlano == 1) {
+                        assinaturaEscolhida = "Core";
+                    } else if (opcPlano == 2) {
+                        assinaturaEscolhida = "Essential";
+                    } else if (opcPlano == 3) {
+                        assinaturaEscolhida = "Premium";
+                    }else assinaturaEscolhida = "Ultimate";
+
+                    System.out.println("Deseja ser VIP?");
+                    System.out.println("1 - Sim ");
+                    System.out.println("2 - Não");
+
+                    int VIP = scan.nextInt();
+                    scan.nextLine();
+                    if (VIP == 1) {
+                    vip = true;
+                    }else vip = false;
+
+
+
+
 
                     Proprietario p = new Proprietario(nome, contato, assinaturaEscolhida, vip);
                     proprietarios.add(p);
