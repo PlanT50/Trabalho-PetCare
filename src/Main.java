@@ -5,11 +5,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        ArrayList<Proprietario> proprietarios = new ArrayList<>();
+        ArrayList<Animal> animais = new ArrayList<>();
+
         Scanner scan = new Scanner(System.in);
         int opcao = 0;
         int assinatura = 0;
-        ArrayList<Proprietario> proprietarios = new ArrayList<>();
-        ArrayList<Animal> animais = new ArrayList<>();
 
 
         while (opcao != 5) {
@@ -65,7 +66,7 @@ public class Main {
 
                     System.out.println("Qual a idade do animal");
 
-                    String idadeAnimal = scan.nextLine();
+                    int idadeAnimal = scan.nextInt();
 
                     System.out.println("Qual o histórico de Saúde do animal:");
 
@@ -83,6 +84,7 @@ public class Main {
                     Proprietario escolhido = proprietarios.get(indice);
 
                     Animal m = new Animal(nomeAnimal, idadeAnimal, historicoAnimal, escolhido);
+                    escolhido.addAnimal(m);
                     break;
 
                 case 3:
