@@ -23,12 +23,11 @@ public class Main {
             System.out.println("5 - Sair");
 
             opcao = scan.nextInt();
-
             scan.nextLine();
+
 
             switch (opcao) {
                 case 1:
-                    limparTela();
                     System.out.println("Cadastro Proprietário");
                     System.out.println("Digite seu nome:");
 
@@ -61,7 +60,6 @@ public class Main {
                     break;
 
                 case 2:
-                    limparTela();
                     System.out.println("Cadastro Animal");
                     System.out.println("Digite seu nome:");
 
@@ -93,7 +91,6 @@ public class Main {
                     break;
 
                 case 3:
-                    limparTela();
                     if (animais.isEmpty()) {
                         System.out.println("Nenhum animal cadastrado!");
                         break;
@@ -126,7 +123,6 @@ public class Main {
                     break;
 
                 case 4:
-                    limparTela();
                     if (consultas.isEmpty()) {
                         System.out.println("Nenhuma consulta agendada.");
                         break;
@@ -145,7 +141,6 @@ public class Main {
                     break;
 
                 case 5:
-                    limparTela();
                     System.out.println("Saindo...");
                     break;
 
@@ -153,10 +148,6 @@ public class Main {
 
 
         }
-    }
-    public static void limparTela() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
     }
 
 }
