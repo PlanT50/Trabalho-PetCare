@@ -7,6 +7,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int opcao = 0;
         int assinatura = 0;
+        ArrayList<Proprietario> proprietarios = new ArrayList<>();
 
 
         while (opcao != 5) {
@@ -18,7 +19,6 @@ public class Main {
             System.out.println("5 - Sair");
 
             opcao = scan.nextInt();
-            assinatura = scan.nextInt();
 
             scan.nextLine();
 
@@ -32,10 +32,27 @@ public class Main {
                     System.out.println("Digite seu Contato: ");
                     int contato = scan.nextInt();
 
-                    System.out.println("Qual plano deseja: ");
+                    System.out.println("Qual plano deseja?");
+                    System.out.println("1 - Normal");
+                    System.out.println("2 - VIP");
+                    int opcPlano = scan.nextInt();
+                    scan.nextLine(); // limpar buffer
+
+                    String assinaturaEscolhida;
+                    boolean vip;
+
+                    if (opcPlano == 2) {
+                        assinaturaEscolhida = "VIP";
+                        vip = true;
+                    } else {
+                        assinaturaEscolhida = "Normal";
+                        vip = false;
+                    }
 
 
-                    Proprietario p = new Proprietario(nome,contato,);
+
+                    Proprietario p = new Proprietario(nome, contato, assinaturaEscolhida, vip);
+                    proprietarios.add(p);
                     break;
 
                 case 2:
