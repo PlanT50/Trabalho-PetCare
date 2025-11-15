@@ -1,3 +1,4 @@
+import java.awt.desktop.SystemEventListener;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -70,9 +71,18 @@ public class Main {
 
                     String historicoAnimal = scan.nextLine();
 
+                    System.out.println("Qual é o proprietário: ");
 
+                    for(int i=0; i < proprietarios.size(); i++){
+                        System.out.println( i + "-" + proprietarios.get(i).getNome());
+                    }
 
-                    Animal m = new Animal(nomeAnimal, idadeAnimal, historicoAnimal,)
+                    int indice = scan.nextInt();
+                    scan.nextLine();
+
+                    Proprietario escolhido = proprietarios.get(indice);
+
+                    Animal m = new Animal(nomeAnimal, idadeAnimal, historicoAnimal, escolhido);
                     break;
 
                 case 3:
