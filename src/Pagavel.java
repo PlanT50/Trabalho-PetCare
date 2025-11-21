@@ -1,5 +1,5 @@
 public interface Pagavel {
-    double desconto();
-    void Pagamento(double valor);
-
+    double calcularDesconto();
+    void efetuarPagamento(double valor);
+    double getValorFinal();
 }
