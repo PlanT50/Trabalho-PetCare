@@ -3,87 +3,89 @@ import java.util.ArrayList;
 
 public class DataManager {
 
-    private static final String CAMINHO = "data/dados.txt";
+    private static final String ARQUIVO = "data/dados.txt";
 
-    public static void salvar(ArrayList<Proprietario> proprietarios, ArrayList<Animal> animais) {
+    public static void salvar(ArrayList<Proprietario> proprietarios,
+                              ArrayList<Animal> animais,
+                              ArrayList<Consulta> consultas) {
         try {
             File dir = new File("data");
             if (!dir.exists()) dir.mkdir();
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter(CAMINHO));
+            BufferedWriter w = new BufferedWriter(new FileWriter(ARQUIVO));
 
             for (Proprietario p : proprietarios) {
-                writer.write("PROPRIETARIO;" +
-                        p.getNome() + ";" +
-                        p.getContato() + ";" +
-                        p.getAssinatura() + ";" +
-                        p.isVip());
-                writer.newLine();
+                w.write("PROPRIETARIO;" + p.getNome() + ";" + p.getContato() + ";" +
+                        p.getAssinatura() + ";" + p.isVip());
+                w.newLine();
             }
-
 
             for (Animal a : animais) {
-                writer.write("ANIMAL;" +
-                        a.getNome() + ";" +
-                        a.getEspecie() + ";" +
-                        a.getIdade() + ";" +
-                        a.getProprietario().getNome());
-                writer.newLine();
+                w.write("ANIMAL;" + a.getNome() + ";" + a.getEspecie() + ";" +
+                        a.getIdade() + ";" + a.getProprietario().getNome());
+                w.newLine();
             }
 
-            writer.close();
-            System.out.println(" Dados salvos no arquivo TXT!");
-        } catch (IOException e) {
-            System.out.println("Erro ao salvar dados: " + e.getMessage());
+            for (Consulta c : consultas) {
+                w.write("CONSULTA;" + c.getAnimal().getNome() + ";" +
+                        c.getData() + ";" + c.getHora() + ";" + c.getVeterinario());
+                w.newLine();
+            }
+
+            w.close();
+            System.out.println("Dados salvos!");
+        } catch (Exception e) {
+            System.out.println("Erro ao salvar");
         }
     }
 
-    public static void carregar(ArrayList<Proprietario> proprietarios, ArrayList<Animal> animais) {
-        File arquivo = new File(CAMINHO);
-        if (!arquivo.exists()) {
-            System.out.println(" Nenhum arquivo de dados encontrado.");
-            return;
-        }
+    public static void carregar(ArrayList<Proprietario> proprietarios,
+                                ArrayList<Animal> animais,
+                                ArrayList<Consulta> consultas) {
+        try {
+            File f = new File(ARQUIVO);
+            if (!f.exists()) return;
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(CAMINHO))) {
+            BufferedReader r = new BufferedReader(new FileReader(f));
             String linha;
 
-            while ((linha = reader.readLine()) != null) {
-                String[] partes = linha.split(";");
+            while ((linha = r.readLine()) != null) {
+                String[] p = linha.split(";");
 
-                if (partes[0].equals("PROPRIETARIO")) {
-                    String nome = partes[1];
-                    String contato = partes[2];
-                    String assinatura = partes[3];
-                    boolean vip = Boolean.parseBoolean(partes[4]);
-
-                    Proprietario p = new Proprietario(nome, contato, assinatura, vip);
-                    proprietarios.add(p);
+                if (p[0].equals("PROPRIETARIO")) {
+                    Proprietario prop = new Proprietario(p[1], p[2], p[3], Boolean.parseBoolean(p[4]));
+                    proprietarios.add(prop);
                 }
 
-                else if (partes[0].equals("ANIMAL")) {
-                    String nome = partes[1];
-                    String especie = partes[2];
-                    int idade = Integer.parseInt(partes[3]);
-                    String nomeProp = partes[4];
+                if (p[0].equals("ANIMAL")) {
+                    Proprietario dono = proprietarios.stream()
+                            .filter(x -> x.getNome().equals(p[4]))
+                            .findFirst().orElse(null);
 
-                    Proprietario prop = proprietarios.stream()
-                            .filter(p -> p.getNome().equals(nomeProp))
-                            .findFirst()
-                            .orElse(null);
-
-                    if (prop != null) {
-                        Animal a = new Animal(nome, especie, idade, prop);
+                    if (dono != null) {
+                        Animal a = new Animal(p[1], p[2], Integer.parseInt(p[3]), dono);
                         animais.add(a);
-                        prop.addAnimal(a);
+                        dono.addAnimal(a);
+                    }
+                }
+
+                if (p[0].equals("CONSULTA")) {
+                    Animal a = animais.stream()
+                            .filter(x -> x.getNome().equals(p[1]))
+                            .findFirst().orElse(null);
+
+                    if (a != null) {
+                        Consulta c = new Consulta(p[2], p[3], a, p[4]);
+                        consultas.add(c);
+                        a.adicionarConsulta(c);
                     }
                 }
             }
 
-            System.out.println(" Dados carregados do arquivo TXT!");
+            r.close();
+            System.out.println("Dados carregados!");
         } catch (Exception e) {
-            System.out.println("Erro ao carregar dados: " + e.getMessage());
+            System.out.println("Erro ao carregar");
         }
     }
 }
-

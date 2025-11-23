@@ -16,7 +16,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        DataManager.carregar(proprietarios, animais);
+        DataManager.carregar(proprietarios, animais, consultas);
 
         int opcao = 0;
 
@@ -43,7 +43,8 @@ public class Main {
                     case 13: exibirHistoricoAnimal(); break;
                     case 14: efetuarPagamento(); break;
                     case 15:
-                        DataManager.salvar(proprietarios, animais);
+                        DataManager.salvar(proprietarios, animais, consultas);
+                        System.out.println("Sistema encerrado");
                         System.out.println("\n Sistema PetCare encerrado"); break;
                     default: System.out.println("\n Opção inválida");
                 }
