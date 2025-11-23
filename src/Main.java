@@ -15,6 +15,9 @@ public class Main {
     private static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
+
+        DataManager.carregar(proprietarios, animais);
+
         int opcao = 0;
 
         while (opcao != 15) {
@@ -39,7 +42,9 @@ public class Main {
                     case 12: verificarCirurgias(); break;
                     case 13: exibirHistoricoAnimal(); break;
                     case 14: efetuarPagamento(); break;
-                    case 15: System.out.println("\n Sistema PetCare encerrado"); break;
+                    case 15:
+                        DataManager.salvar(proprietarios, animais);
+                        System.out.println("\n Sistema PetCare encerrado"); break;
                     default: System.out.println("\n Opção inválida");
                 }
             } catch (InputMismatchException e) {
