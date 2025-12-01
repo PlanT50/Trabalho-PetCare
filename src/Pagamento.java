@@ -62,4 +62,8 @@ public class Pagamento implements Pagavel {
         System.out.println("─────────────────────────────────");
         System.out.println("TOTAL A PAGAR: R$ " + String.format("%.2f", getValorFinal()));
     }
+
+    public String getFormaPagamento() {
+        return formaPagamento;
+    }
 }

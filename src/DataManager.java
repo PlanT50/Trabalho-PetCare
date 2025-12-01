@@ -62,7 +62,11 @@ public class DataManager {
 
     public static void carregar(ArrayList<Proprietario> proprietarios,
                                 ArrayList<Animal> animais,
-                                ArrayList<Consulta> consultas) {
+                                ArrayList<Consulta> consultas,
+                                ArrayList<Cirurgia> cirurgias,
+                                ArrayList<Exame> exames,
+                                ArrayList<Vacina> vacinas,
+                                ArrayList<Pagamento> pagamentos) {
         try {
             File f = new File(ARQUIVO);
             if (!f.exists()) return;
