@@ -11,12 +11,14 @@ public class Main {
     private static ArrayList<Consulta> consultas = new ArrayList<>();
     private static ArrayList<Cirurgia> cirurgias = new ArrayList<>();
     private static ArrayList<Exame> exames = new ArrayList<>();
+    private static ArrayList<Vacina> vacinas = new ArrayList<>();
+    private static ArrayList<Pagamento> pagamentos = new ArrayList<>();
     private static SistemaNotificacao notificacao = new SistemaNotificacao();
     private static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
 
-        DataManager.carregar(proprietarios, animais, consultas, cirurgias, exames);
+        DataManager.carregar(proprietarios, animais, consultas, cirurgias, exames, vacinas, pagamentos);
 
         int opcao = 0;
 
