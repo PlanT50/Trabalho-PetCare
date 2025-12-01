@@ -1,4 +1,5 @@
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class DataManager {
@@ -7,7 +8,11 @@ public class DataManager {
 
     public static void salvar(ArrayList<Proprietario> proprietarios,
                               ArrayList<Animal> animais,
-                              ArrayList<Consulta> consultas) {
+                              ArrayList<Consulta> consultas,
+                              ArrayList<Cirurgia> cirurgias,
+                              ArrayList<Exame> exames,
+                              ArrayList<Vacina> vacinas,
+                              ArrayList<Pagamento> pagamentos) {
         try {
             File dir = new File("data");
             if (!dir.exists()) dir.mkdir();
@@ -29,6 +34,22 @@ public class DataManager {
             for (Consulta c : consultas) {
                 w.write("CONSULTA;" + c.getAnimal().getNome() + ";" +
                         c.getData() + ";" + c.getHora() + ";" + c.getVeterinario());
+                w.newLine();
+            }
+            for (Cirurgia c : cirurgias) {
+                w.write("CIRURGIA;" + c.getAnimal().getNome() + ";" + c.getTipo() + ";" + c.getData() + ";" + c.getHora() + ";" + c.getVeterinarioResponsavel() + ";" + c.isEmergencia());
+                w.newLine();
+            }
+            for (Exame e : exames) {
+                w.write("EXAME;" + e.getAnimal().getNome() + ";" + e.getTipo() + ";" + e.getData() + ";" + e.getHora() + ";" + e.getResultado());
+                w.newLine();
+            }
+            for (Vacina v : vacinas) {
+                w.write("VACINA;" + v.getAnimal().getNome() + ";" + v.getNome() + ";" + v.getDataAplicacao() + ";" + v.getProximaDose() + ";" + v.getLote());
+                w.newLine();
+            }
+            for (Pagamento p : pagamentos) {
+                w.write("PAGAMENTO;" + p.getProprietario().getNome() + ";" + p.getDescricao() + ";" + p.getValor() + ";" + p.getFormaPagamento());
                 w.newLine();
             }
 

@@ -179,7 +179,6 @@ public class Main {
         escolhido.addAnimal(animal);
         animais.add(animal);
 
-        // Adicionar evento médico inicial
         animal.adicionarEventoMedico(new EventoMedico(
                 LocalDate.now(),
                 "Cadastro",
@@ -218,7 +217,6 @@ public class Main {
         animal.adicionarConsulta(consulta);
         consultas.add(consulta);
 
-        // Adicionar ao histórico
         animal.adicionarEventoMedico(new EventoMedico(
                 LocalDate.now(),
                 "Consulta Agendada",
