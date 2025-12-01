@@ -45,7 +45,7 @@ public class Main {
                     case 13: exibirHistoricoAnimal(); break;
                     case 14: efetuarPagamento(); break;
                     case 15:
-                        DataManager.salvar(proprietarios, animais, consultas,);
+                        DataManager.salvar(proprietarios, animais, consultas, cirurgias, exames, vacinas, pagamentos);
                         System.out.println("Sistema encerrado");
                         System.out.println("\n Sistema PetCare encerrado"); break;
                     default: System.out.println("\n Opção inválida");
