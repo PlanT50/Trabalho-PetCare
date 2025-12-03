@@ -604,4 +604,307 @@ public class Main {
             return null;
         }
     }
+    
+    //Alterações para REC1
+
+    private static void editarProprietario() {
+        if (proprietarios.isEmpty()) {
+            System.out.println("\nNenhum proprietário cadastrado");
+            return;
+        }
+
+        System.out.println("\n===== EDITAR PROPRIETÁRIO =====");
+        System.out.println("Proprietários cadastrados:");
+        for (int i = 0; i < proprietarios.size(); i++) {
+            Proprietario p = proprietarios.get(i);
+            System.out.println(i + " - " + p.getNome() + " | " +
+                    p.getContatoFormatado() + " | " + p.getAssinatura() +
+                    (p.isVip() ? "VIP" : ""));
+        }
+
+        System.out.print("\nEscolha o proprietário: ");
+        int indice = scan.nextInt();
+        scan.nextLine();
+
+        if (indice < 0 || indice >= proprietarios.size()) {
+            System.out.println("Proprietário inválido");
+            return;
+        }
+
+        Proprietario p = proprietarios.get(indice);
+
+        System.out.println("\nO que deseja editar?");
+        System.out.println("1 - Nome");
+        System.out.println("2 - Contato");
+        System.out.println("3 - Plano de Assinatura");
+        System.out.println("4 - Status VIP");
+        System.out.println("5 - Editar Tudo");
+        System.out.print("Escolha: ");
+        int opcao = scan.nextInt();
+        scan.nextLine();
+
+        switch (opcao) {
+            case 1:
+                System.out.print("Novo nome: ");
+                p.setNome(scan.nextLine());
+                System.out.println("Nome atualizado");
+                break;
+
+            case 2:
+                String novoContato;
+                while (true) {
+                    System.out.print("Novo contato (10-11 dígitos): ");
+                    novoContato = scan.nextLine();
+                    if (novoContato.matches("\\d{10,11}")) {
+                        p.setContato(novoContato);
+                        break;
+                    }
+                    System.out.println("Contato inválido");
+                }
+                System.out.println("Contato atualizado");
+                break;
+
+            case 3:
+                System.out.println("\nNovo plano:");
+                System.out.println("1 - Core | 2 - Essential | 3 - Premium | 4 - Ultimate");
+                System.out.print("Escolha: ");
+                int opcPlano = scan.nextInt();
+                scan.nextLine();
+
+                String novoPlano = switch (opcPlano) {
+                    case 1 -> "Core";
+                    case 2 -> "Essential";
+                    case 3 -> "Premium";
+                    case 4 -> "Ultimate";
+                    default -> p.getAssinatura();
+                };
+                p.setAssinatura(novoPlano);
+                System.out.println("Plano atualizado");
+                break;
+
+            case 4:
+                System.out.print("Status VIP (S/N): ");
+                p.setVip(scan.nextLine().toUpperCase().equals("S"));
+                System.out.println("Status VIP atualizado");
+                break;
+
+            case 5:
+                System.out.print("Novo nome: ");
+                p.setNome(scan.nextLine());
+
+                while (true) {
+                    System.out.print("Novo contato (10-11 dígitos): ");
+                    String cont = scan.nextLine();
+                    if (cont.matches("\\d{10,11}")) {
+                        p.setContato(cont);
+                        break;
+                    }
+                    System.out.println("Contato inválido");
+                }
+
+                System.out.println("\nNovo plano:");
+                System.out.println("1 - Core | 2 - Essential | 3 - Premium | 4 - Ultimate");
+                System.out.print("Escolha: ");
+                int opc = scan.nextInt();
+                scan.nextLine();
+                String pl = switch (opc) {
+                    case 1 -> "Core";
+                    case 2 -> "Essential";
+                    case 3 -> "Premium";
+                    case 4 -> "Ultimate";
+                    default -> p.getAssinatura();
+                };
+                p.setAssinatura(pl);
+
+                System.out.print("Status VIP (S/N): ");
+                p.setVip(scan.nextLine().toUpperCase().equals("S"));
+
+                System.out.println("Todos os dados atualizados");
+                break;
+
+            default:
+                System.out.println("Opção inválida");
+        }
+    }
+
+    private static void editarAnimal() {
+        if (animais.isEmpty()) {
+            System.out.println("\nNenhum animal cadastrado");
+            return;
+        }
+
+        System.out.println("\n===== EDITAR ANIMAL =====");
+        System.out.println("Animais cadastrados:");
+        for (int i = 0; i < animais.size(); i++) {
+            Animal a = animais.get(i);
+            System.out.println(i + " - " + a.getNome() + " | " +
+                    a.getEspecie() + " | " + a.getIdade() + " ano(s) | Dono: " +
+                    a.getProprietario().getNome());
+        }
+
+        System.out.print("\nEscolha o animal: ");
+        int indice = scan.nextInt();
+        scan.nextLine();
+
+        if (indice < 0 || indice >= animais.size()) {
+            System.out.println("Animal inválido");
+            return;
+        }
+
+        Animal a = animais.get(indice);
+
+        System.out.println("\nO que deseja editar?");
+        System.out.println("1 - Nome");
+        System.out.println("2 - Espécie");
+        System.out.println("3 - Idade");
+        System.out.println("4 - Editar Todos");
+        System.out.print("Escolha: ");
+        int opcao = scan.nextInt();
+        scan.nextLine();
+
+        switch (opcao) {
+            case 1:
+                System.out.print("Novo nome: ");
+                a.setNome(scan.nextLine());
+                System.out.println("Nome atualizado");
+                break;
+
+            case 2:
+                System.out.print("Nova espécie: ");
+                a.setEspecie(scan.nextLine());
+                System.out.println("Espécie atualizada");
+                break;
+
+            case 3:
+                try {
+                    System.out.print("Nova idade: ");
+                    int novaIdade = scan.nextInt();
+                    scan.nextLine();
+                    a.setIdade(novaIdade);
+                    System.out.println("Idade atualizada");
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Erro: " + e.getMessage());
+                }
+                break;
+
+            case 4:
+                System.out.print("Novo nome: ");
+                a.setNome(scan.nextLine());
+
+                System.out.print("Nova espécie: ");
+                a.setEspecie(scan.nextLine());
+
+                try {
+                    System.out.print("Nova idade: ");
+                    int novaIdade = scan.nextInt();
+                    scan.nextLine();
+                    a.setIdade(novaIdade);
+                    System.out.println("Dados atualizados");
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Erro na idade: " + e.getMessage());
+                }
+                break;
+
+            default:
+                System.out.println("Opção inválida");
+        }
+    }
+
+    private static void excluirProprietario() {
+        if (proprietarios.isEmpty()) {
+            System.out.println("\nNenhum proprietário cadastrado");
+            return;
+        }
+
+        System.out.println("\n===== EXCLUIR PROPRIETÁRIO =====");
+        System.out.println("Ao excluir um proprietário, todos os seus animais serão juntamente excluídos");
+        System.out.println("\nProprietários cadastrados:");
+
+        for (int i = 0; i < proprietarios.size(); i++) {
+            Proprietario p = proprietarios.get(i);
+            System.out.println(i + " - " + p.getNome() + "Animais: " +
+                    p.getAnimais().size() + (p.isVip() ? "VIP" : ""));
+        }
+
+        System.out.print("\nEscolha o proprietário: ");
+        int indice = scan.nextInt();
+        scan.nextLine();
+
+        if (indice < 0 || indice >= proprietarios.size()) {
+            System.out.println("Proprietário inválido");
+            return;
+        }
+
+        Proprietario p = proprietarios.get(indice);
+
+        System.out.println("\nConfirma exclusão de " + p.getNome() + "?");
+        System.out.println("Isso irá excluir " + p.getAnimais().size() + " animal(is) associado(s)");
+        System.out.print("Digite 'CONFIRMAR' para prosseguir: ");
+        String confirmacao = scan.nextLine();
+
+        if (!confirmacao.equals("CONFIRMAR")) {
+            System.out.println("Exclusão cancelada");
+            return;
+        }
+
+        ArrayList<Animal> animaisParaRemover = new ArrayList<>(p.getAnimais());
+        for (Animal animal : animaisParaRemover) {
+
+            consultas.removeIf(c -> c.getAnimal().equals(animal));
+            cirurgias.removeIf(c -> c.getAnimal().equals(animal));
+            exames.removeIf(e -> e.getAnimal().equals(animal));
+            animais.remove(animal);
+        }
+
+        proprietarios.remove(p);
+
+        System.out.println("\nProprietário e " + animaisParaRemover.size() +
+                " animal(is) excluídos com sucesso");
+    }
+
+    private static void excluirAnimal() {
+        if (animais.isEmpty()) {
+            System.out.println("\nNenhum animal cadastrado");
+            return;
+        }
+
+        System.out.println("\n===== EXCLUIR ANIMAL =====");
+        System.out.println("ATENÇÃO: Ao excluir um animal, todo o seu histórico será perdido");
+        System.out.println("\nAnimais cadastrados:");
+
+        for (int i = 0; i < animais.size(); i++) {
+            Animal a = animais.get(i);
+            System.out.println(i + " - " + a.getNome() + " | " +
+                    a.getEspecie() + "Dono: " + a.getProprietario().getNome());
+        }
+
+        System.out.print("\nEscolha o animal: ");
+        int indice = scan.nextInt();
+        scan.nextLine();
+
+        if (indice < 0 || indice >= animais.size()) {
+            System.out.println("Animal inválido");
+            return;
+        }
+
+        Animal a = animais.get(indice);
+
+        System.out.println("\nConfirma exclusão de " + a.getNome() + "?");
+        System.out.print("Digite 'CONFIRMAR' para prosseguir: ");
+        String confirmacao = scan.nextLine();
+
+        if (!confirmacao.equals("CONFIRMAR")) {
+            System.out.println("Exclusão cancelada");
+            return;
+        }
+
+        a.getProprietario().getAnimais().remove(a);
+
+        consultas.removeIf(c -> c.getAnimal().equals(a));
+        cirurgias.removeIf(c -> c.getAnimal().equals(a));
+        exames.removeIf(e -> e.getAnimal().equals(a));
+        animais.remove(a);
+
+        System.out.println("\nAnimal excluído com sucesso");
+    }
 }
