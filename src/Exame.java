@@ -55,6 +55,10 @@ public class Exame implements Agendavel {
         return tipo;
     }
 
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
     public String getResultado() {
         return resultado;
     }

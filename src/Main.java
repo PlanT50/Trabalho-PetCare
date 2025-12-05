@@ -48,6 +48,12 @@ public class Main {
                     case 16: editarAnimal(); break;
                     case 17: excluirProprietario(); break;
                     case 18: excluirAnimal(); break;
+                    case 19: editarConsulta(); break;
+                    case 20: excluirConsulta(); break;
+                    case 21: editarExame(); break;
+                    case 22: excluirExame(); break;
+                    case 23: editarCirurgia(); break;
+                    case 24: excluirCirurgia(); break;
                     case 0:
                         DataManager.salvar(proprietarios, animais, consultas, cirurgias, exames, vacinas, pagamentos);
                         System.out.println("Sistema encerrado");
@@ -100,6 +106,12 @@ public class Main {
         System.out.println("  16 - Editar Animal");
         System.out.println("  17 - Excluir Proprietário");
         System.out.println("  18 - Excluir Animal");
+        System.out.println("  19 - Editar Consulta");
+        System.out.println("  20 - Excluir Consulta");
+        System.out.println("  21 - Editar Exame");
+        System.out.println("  22 - Excluir Exame");
+        System.out.println("  23 - Editar Cirurgia");
+        System.out.println("  24 - Excluir Cirurgia");
 
         System.out.println("\n  0 - Sair");
         System.out.println("════════════════════════════════════════════");
@@ -924,5 +936,215 @@ public class Main {
         animais.remove(a);
 
         System.out.println("\nAnimal excluído com sucesso");
+    }
+
+    private static void editarConsulta() {
+        if (consultas.isEmpty()) {
+            System.out.println("\nNenhuma consulta cadastrada.");
+            return;
+        }
+
+        System.out.println("\n===== EDITAR CONSULTA =====");
+        for (int i = 0; i < consultas.size(); i++) {
+            Consulta c = consultas.get(i);
+            System.out.println(i + " - " + c.getAnimal().getNome() +
+                    " | " + c.getData() + " " + c.getHora() +
+                    " | Vet: " + c.getVeterinario());
+        }
+
+        System.out.print("\nEscolha a consulta: ");
+        int idx = scan.nextInt();
+        scan.nextLine();
+
+        if (idx < 0 || idx >= consultas.size()) {
+            System.out.println("Índice inválido.");
+            return;
+        }
+
+        Consulta c = consultas.get(idx);
+
+        System.out.print("Nova data (" + c.getData() + "): ");
+        c.setData(scan.nextLine());
+
+        System.out.print("Nova hora (" + c.getHora() + "): ");
+        c.setHora(scan.nextLine());
+
+        System.out.print("Novo veterinário (" + c.getVeterinario() + "): ");
+        c.setVeterinario(scan.nextLine());
+
+        System.out.println("\nConsulta atualizada com sucesso!");
+    }
+
+    private static void excluirConsulta() {
+        if (consultas.isEmpty()) {
+            System.out.println("\nNenhuma consulta cadastrada.");
+            return;
+        }
+
+        System.out.println("\n===== EXCLUIR CONSULTA =====");
+        for (int i = 0; i < consultas.size(); i++) {
+            Consulta c = consultas.get(i);
+            System.out.println(i + " - " + c.getAnimal().getNome() +
+                    " | " + c.getData() + " " + c.getHora());
+        }
+
+        System.out.print("\nEscolha a consulta: ");
+        int idx = scan.nextInt();
+        scan.nextLine();
+
+        if (idx < 0 || idx >= consultas.size()) {
+            System.out.println("Índice inválido.");
+            return;
+        }
+
+        Consulta c = consultas.get(idx);
+
+        // remover também do animal
+        c.getAnimal().getConsultas().remove(c);
+
+        consultas.remove(c);
+
+        System.out.println("\nConsulta removida com sucesso!");
+    }
+
+    private static void editarExame() {
+        if (exames.isEmpty()) {
+            System.out.println("\nNenhum exame cadastrado.");
+            return;
+        }
+
+        System.out.println("\n===== EDITAR EXAME =====");
+        for (int i = 0; i < exames.size(); i++) {
+            Exame e = exames.get(i);
+            System.out.println(i + " - " + e.getAnimal().getNome() +
+                    " | " + e.getTipo() + " | " + e.getData());
+        }
+
+        System.out.print("\nEscolha o exame: ");
+        int idx = scan.nextInt();
+        scan.nextLine();
+
+        if (idx < 0 || idx >= exames.size()) {
+            System.out.println("Índice inválido.");
+            return;
+        }
+
+        Exame e = exames.get(idx);
+
+        System.out.print("Novo tipo (" + e.getTipo() + "): ");
+        e.setTipo(scan.nextLine());
+
+        System.out.print("Nova data (" + e.getData() + "): ");
+        e.setData(scan.nextLine());
+
+        System.out.print("Novo horário (" + e.getHora() + "): ");
+        e.setHora(scan.nextLine());
+
+        System.out.print("Resultado (" + e.getResultado() + "): ");
+        e.setResultado(scan.nextLine());
+
+        System.out.println("\nExame atualizado com sucesso!");
+    }
+
+    private static void excluirExame() {
+        if (exames.isEmpty()) {
+            System.out.println("\nNenhum exame cadastrado.");
+            return;
+        }
+
+        System.out.println("\n===== EXCLUIR EXAME =====");
+        for (int i = 0; i < exames.size(); i++) {
+            Exame e = exames.get(i);
+            System.out.println(i + " - " + e.getAnimal().getNome() +
+                    " | " + e.getTipo());
+        }
+
+        System.out.print("\nEscolha o exame: ");
+        int idx = scan.nextInt();
+        scan.nextLine();
+
+        if (idx < 0 || idx >= exames.size()) {
+            System.out.println("Índice inválido.");
+            return;
+        }
+
+        Exame e = exames.get(idx);
+
+        e.getAnimal().getExames().remove(e);
+        exames.remove(e);
+
+        System.out.println("\nExame removido com sucesso!");
+    }
+
+    private static void editarCirurgia() {
+        if (cirurgias.isEmpty()) {
+            System.out.println("\nNenhuma cirurgia cadastrada.");
+            return;
+        }
+
+        System.out.println("\n===== EDITAR CIRURGIA =====");
+        for (int i = 0; i < cirurgias.size(); i++) {
+            Cirurgia c = cirurgias.get(i);
+            System.out.println(i + " - " + c.getAnimal().getNome() +
+                    " | " + c.getTipo() + " | " + c.getData());
+        }
+
+        System.out.print("\nEscolha a cirurgia: ");
+        int idx = scan.nextInt();
+        scan.nextLine();
+
+        if (idx < 0 || idx >= cirurgias.size()) {
+            System.out.println("Índice inválido.");
+            return;
+        }
+
+        Cirurgia c = cirurgias.get(idx);
+
+        System.out.print("Novo tipo (" + c.getTipo() + "): ");
+        c.setTipo(scan.nextLine());
+
+        System.out.print("Nova data (" + c.getData() + "): ");
+        c.setData(scan.nextLine());
+
+        System.out.print("Nova hora (" + c.getHora() + "): ");
+        c.setHora(scan.nextLine());
+
+        System.out.print("Novo veterinário (" + c.getVeterinarioResponsavel() + "): ");
+        c.setVeterinarioResponsavel(scan.nextLine());
+
+        System.out.print("Emergência (true/false, atual = " + c.isEmergencia() + "): ");
+        c.setEmergencia(Boolean.parseBoolean(scan.nextLine()));
+
+        System.out.println("\nCirurgia atualizada com sucesso!");
+    }
+
+    private static void excluirCirurgia() {
+        if (cirurgias.isEmpty()) {
+            System.out.println("\nNenhuma cirurgia cadastrada.");
+            return;
+        }
+
+        System.out.println("\n===== EXCLUIR CIRURGIA =====");
+        for (int i = 0; i < cirurgias.size(); i++) {
+            Cirurgia c = cirurgias.get(i);
+            System.out.println(i + " - " + c.getAnimal().getNome() +
+                    " | " + c.getTipo());
+        }
+
+        System.out.print("\nEscolha a cirurgia: ");
+        int idx = scan.nextInt();
+        scan.nextLine();
+
+        if (idx < 0 || idx >= cirurgias.size()) {
+            System.out.println("Índice inválido.");
+            return;
+        }
+
+        Cirurgia c = cirurgias.get(idx);
+
+        c.getAnimal().getCirurgias().remove(c);
+        cirurgias.remove(c);
+
+        System.out.println("\nCirurgia removida com sucesso!");
     }
 }
