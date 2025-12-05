@@ -9,6 +9,7 @@ public class Animal {
     private ArrayList<Consulta> consultas;
     private ArrayList<Cirurgia> cirurgias;
     private ArrayList<Vacina> vacinas;
+    private ArrayList<Exame> exames;
 
     public Animal(String nome, String especie, int idade, Proprietario proprietario) {
         if (idade < 0) {
@@ -22,7 +23,17 @@ public class Animal {
         this.consultas = new ArrayList<>();
         this.cirurgias = new ArrayList<>();
         this.vacinas = new ArrayList<>();
+        this.exames = new ArrayList<>();
     }
+
+    public void adicionarExame(Exame exame) {
+        exames.add(exame);
+    }
+
+    public ArrayList<Exame> getExames() {
+        return exames;
+    }
+
 
     public String getNome() {
         return nome;

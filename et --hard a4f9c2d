@@ -1,0 +1,343 @@
+[33mcommit 6fca361bb4237a1fee05c589d2c58356da3bd181[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Manoel <omegadarkxyz@gmail.com>
+Date:   Thu Dec 4 23:25:58 2025 -0300
+
+    Ajuste de estrutura
+
+[33mcommit 20c8f6a3af8bf07603c405f7bff3a3b781cb6193[m
+Merge: b31cd7c 37e6fbf
+Author: Manoel <omegadarkxyz@gmail.com>
+Date:   Thu Dec 4 23:24:09 2025 -0300
+
+    Merge
+
+[33mcommit b31cd7ca224857d314d2b87e32e733d0ce8d31c5[m
+Author: Manoel <omegadarkxyz@gmail.com>
+Date:   Thu Dec 4 23:18:29 2025 -0300
+
+    merge
+
+[33mcommit 37e6fbf26d30248934e8cdc52bdf6f525b760598[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: luiz-lucena <luizlucena1106@gmail.com>
+Date:   Thu Dec 4 23:17:15 2025 -0300
+
+    1
+
+[33mcommit e3a10e909836cc58772018c25e036d814f0a1075[m
+Author: CabruncoMako <pablocanavarrodesa@gmail.com>
+Date:   Tue Dec 2 23:34:16 2025 -0300
+
+    Implementa
+    
+    Added methods to edit and delete owners and animals, including input validation and confirmation prompts.
+
+[33mcommit 23bb2f2fc00930d82a35b85d804c287db62e0d27[m
+Author: Manoel <omegadarkxyz@gmail.com>
+Date:   Mon Dec 1 14:56:44 2025 -0300
+
+    Listas completas no salvar, main
+
+[33mcommit 13f32014c3892a44bb4097bd4751520dd253ed68[m
+Author: Manoel <omegadarkxyz@gmail.com>
+Date:   Mon Dec 1 14:53:54 2025 -0300
+
+    Listas completas no main para carregar
+
+[33mcommit 74f4e16da012c59b233c4b4ae15802c3aae1f07e[m
+Author: Manoel <omegadarkxyz@gmail.com>
+Date:   Mon Dec 1 14:47:29 2025 -0300
+
+    ajuste na  estruturação do código, método de salvar e carregar na classe datamanager completos
+
+[33mcommit 2a64e8077e5dbf20e0484ea57ab6fbe381096b61[m
+Author: Manoel <omegadarkxyz@gmail.com>
+Date:   Mon Dec 1 14:42:40 2025 -0300
+
+    Ajustes gerais, criação do get do pagamento
+
+[33mcommit 3b5f27d8e4e8242031f4d12cbd14daaed37c4ba0[m
+Author: Manoel <omegadarkxyz@gmail.com>
+Date:   Mon Dec 1 14:38:47 2025 -0300
+
+    Atualização do salvamento de informações(Cirurgias,exames,pagamentos e vacinas adicionadas)
+
+[33mcommit c0941caa84e135c9a6f0896937490f2daeaabf28[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Sun Nov 23 19:52:24 2025 -0300
+
+    Adição de consultas as informações salvas
+
+[33mcommit 10c5c71a9a5b89e814e13c54306a45dfcf7ef26a[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Sun Nov 23 19:38:02 2025 -0300
+
+    Envio do código para salvar as informações
+
+[33mcommit ea77c432e11e54cc87466f9cca11c001a81e8cfc[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Thu Nov 20 21:05:47 2025 -0300
+
+    Modificações do Pablo
+
+[33mcommit d6b1971134a0be03a76cce9e96d38572f8adf190[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Sat Nov 15 01:29:32 2025 -0300
+
+    Erro no case 1 corrigido(Assinatura separada do VIP)
+
+[33mcommit c8314956f5a7df3692e206681ee4dc513df10e30[m
+Merge: 9e994f2 28d0072
+Author: luiz-lucena <luizlucena1106@gmail.com>
+Date:   Sat Nov 15 01:19:21 2025 -0300
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 9e994f20961fd7b994d891348d5751419fcbd173[m
+Author: luiz-lucena <luizlucena1106@gmail.com>
+Date:   Sat Nov 15 01:18:43 2025 -0300
+
+    correção de bugs
+
+[33mcommit 28d00725a8467183ee45423ea9e3d2b4d579f6a0[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Sat Nov 15 01:13:52 2025 -0300
+
+    LimparTela removido, provavelmente será adicionado novamente no futuro
+
+[33mcommit 8ba46223e988427c8923bf7c3c25e512d96b3207[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Sat Nov 15 01:06:36 2025 -0300
+
+    Adicionado método para limpar o terminal
+
+[33mcommit ecb119873b7f21d7dcd8e9cb85f0c1087f831ff9[m
+Author: luiz-lucena <luizlucena1106@gmail.com>
+Date:   Sat Nov 15 00:56:00 2025 -0300
+
+    case 3 e case 4
+
+[33mcommit ebf5611c1c9e5966b84ad8d8899b8a1e9de8c39c[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Sat Nov 15 00:41:52 2025 -0300
+
+    Ajustes e linha para adicionar animal a lista do proprietário
+
+[33mcommit 2b97dd8271d5ff0c3e99bcd359ef4e573670f6f6[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Sat Nov 15 00:36:17 2025 -0300
+
+    Adicionado a parte para adicionar o proprietário do animal
+
+[33mcommit bcd2a9e0dfc247dd986654aca078f2b2edf81b94[m
+Merge: e57d426 cc0dc26
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Sat Nov 15 00:24:01 2025 -0300
+
+    Merge branch 'master' of https://github.com/PlanT50/Trabalho-PetCare
+
+[33mcommit cc0dc2651668d43da9413e430d2995a31ea6d898[m
+Author: luiz-lucena <luizlucena1106@gmail.com>
+Date:   Sat Nov 15 00:24:35 2025 -0300
+
+    mudanças Main e Pagamento
+
+[33mcommit e57d426bd55d2eb9f40a2da0f9a5ef98c5d9314f[m
+Merge: 82eac7e c8ccde5
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Sat Nov 15 00:18:16 2025 -0300
+
+    Merge branch 'master' of https://github.com/PlanT50/Trabalho-PetCare
+
+[33mcommit c8ccde5c79bc8957bfedf2183f47cbc8b6ea5a61[m
+Author: luiz-lucena <luizlucena1106@gmail.com>
+Date:   Sat Nov 15 00:17:07 2025 -0300
+
+    mudanças Main
+
+[33mcommit 4f5f18478cdeb7f06d6b54f043c931c63d12bb48[m
+Author: luiz-lucena <luizlucena1106@gmail.com>
+Date:   Sat Nov 15 00:12:33 2025 -0300
+
+    mudanças Main
+
+[33mcommit 82eac7e3f361efebd4bbec400e66bdf628fab5c6[m
+Merge: f6654af 4f5f184
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Sat Nov 15 00:12:02 2025 -0300
+
+    Merge branch 'master' of https://github.com/PlanT50/Trabalho-PetCare
+
+[33mcommit f6654af8c737d67c059daac8df5ee64415a4df54[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Sat Nov 15 00:09:39 2025 -0300
+
+    Menu atualizado do CadastroAnimal
+
+[33mcommit d232cdc245b61d22aa1347340f676b8a89e33a33[m
+Author: luiz-lucena <luizlucena1106@gmail.com>
+Date:   Fri Nov 14 23:47:33 2025 -0300
+
+    método exibirAnimals
+
+[33mcommit 3d8c1a57c3cd01d22b0349ce352e622faed2bed4[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Fri Nov 14 23:22:39 2025 -0300
+
+    Ajustes
+
+[33mcommit 6a38f2320be41ad54969b7c6bf1d0c9e9431e9b3[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Fri Nov 14 23:21:25 2025 -0300
+
+    Atributo especie retirado
+
+[33mcommit 9ac4dedf1f08295235c6109f705343af90d37a2b[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Fri Nov 14 23:12:48 2025 -0300
+
+    Uma parte do método do proprietário adicionado
+
+[33mcommit a482f0a00a45722d2ab49fc4d11b91f61eba7858[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Fri Nov 14 22:59:21 2025 -0300
+
+    SwitchCase feito, sem métodos ainda
+
+[33mcommit 97ced5a7c8a339c37ff143d1d714fe96677be976[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Fri Nov 14 22:53:05 2025 -0300
+
+    Parte do menu adicionado
+
+[33mcommit d6e95bd547f8285f95d5a313c83175fe7ee4aa91[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Mon Nov 10 23:43:26 2025 -0300
+
+    Remoçãó de duas classes
+
+[33mcommit e515e6a5cd035ef8438929eab218679173671be4[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Sat Nov 8 13:52:14 2025 -0300
+
+    Re adicionando get animal
+
+[33mcommit 41f00b0c4b1134969f0a0731e38cb839881cfe50[m
+Merge: fa63d24 575de36
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Sat Nov 8 13:47:39 2025 -0300
+
+    Att para resolver erro de merge
+
+[33mcommit fa63d24b7ed33c6adbc3a42a027d96cfda6e6540[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Sat Nov 8 13:41:13 2025 -0300
+
+    Atualização rápida
+
+[33mcommit 575de3627cc73384f2fb66438c4d5b028e0fd938[m
+Author: luiz-lucena <luizlucena1106@gmail.com>
+Date:   Sat Nov 8 13:34:51 2025 -0300
+
+    oi
+
+[33mcommit 6d96300f0061a31ff25fc69634775562501a110e[m
+Author: luiz-lucena <luizlucena1106@gmail.com>
+Date:   Sat Nov 8 13:34:18 2025 -0300
+
+    oi
+
+[33mcommit 111d2c5793f0592a50721dbf31815d87c8b76b11[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Wed Nov 5 14:59:55 2025 -0300
+
+    Implementação de Array List na classe Animal para armazenar consultas e método de exibir consultas
+
+[33mcommit a50974f42501c8bb0431e6000efe94893655b14a[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Wed Nov 5 14:23:45 2025 -0300
+
+    Ajuste de atributos
+
+[33mcommit afee8a28662ba7e9992193614e9e18112c916880[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Wed Nov 5 13:43:56 2025 -0300
+
+    Ajuste de alguns atributos e métodos
+
+[33mcommit 26818e6223dcfd03008251eadc723ca220ad4c85[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Wed Nov 5 12:44:43 2025 -0300
+
+    Implementação da interface Agendavel na classe consulta completa
+
+[33mcommit 13a5bb07cdb73cecbac10301860e66eab2b47d73[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Wed Nov 5 12:26:19 2025 -0300
+
+    Atributo hora alterado para String e método cancelar cumprido
+
+[33mcommit 1e557aa98bbfb9bfae5cb17f5700dd1b572fe8ce[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Wed Nov 5 12:18:50 2025 -0300
+
+    Getters e Setters da Classe Consulta e inicio da implemntação de um método da interface Agendável
+
+[33mcommit 8176be74c93188bd80af3cbe7a4aaa0405d75126[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Wed Nov 5 10:24:12 2025 -0300
+
+    Classe Main adicionada para testes, novo método de exibir informações de animais(Ainda imcompleto)
+
+[33mcommit 2d47bee0e44ff2883206c1720fff0968909a9a3f[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Wed Nov 5 10:01:15 2025 -0300
+
+    Classe Consulta adicionada junto com o começo de implementação de uma interface e um método e um get na classe proprietário
+
+[33mcommit 0d287de09f7654d237713d84fb23474d02847620[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Wed Nov 5 09:17:52 2025 -0300
+
+    Array list de animais adicionada na classe proprietário, junto com os getters e setters dos outros atributos
+
+[33mcommit 2718138803ce5ad7baab72a030b0feb700a92ef1[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Wed Nov 5 09:03:25 2025 -0300
+
+    Adição do private aos atributos e correção do atributo proprietário da classe animal
+
+[33mcommit f0c0a69df21f570ac046e4a32ca04adcf1337008[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Tue Nov 4 15:29:40 2025 -0300
+
+    Duas interfaces adicionadas e um método de animal retirado pois conflitava com uma interface
+
+[33mcommit e7f8b61e14b270f5ae6635824c087ce791e8677e[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Tue Nov 4 15:19:40 2025 -0300
+
+    Dois atributos adiconados a classe proprietário e um método a Animal
+
+[33mcommit 07fc4c40545cbdf173686f7d3c69136966b172f5[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Tue Nov 4 14:58:07 2025 -0300
+
+    Classe Proprietario adiconada, junto com duas variáveis
+
+[33mcommit 3a3bba1ae1a510c8035fb36e015ced37f11f63f0[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Tue Nov 4 14:19:02 2025 -0300
+
+    Adiconado o construtor e os getters e setters
+
+[33mcommit 115b2d1626422fc180b4e597e541aeffd4d2ea68[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Tue Nov 4 14:07:03 2025 -0300
+
+    Classe animal adiconada com algumas variáveis
+
+[33mcommit a9a4d6e7a3e8314bd0a45ff76316c997d0e1bd19[m
+Author: Manoel <131733327+PlanT50@users.noreply.github.com>
+Date:   Tue Nov 4 14:05:49 2025 -0300
+
+    Classe animal adiconada com algumas variáveis
