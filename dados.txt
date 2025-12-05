@@ -1,0 +1,5 @@
+PROPRIETARIO;Manolo;86988135943;Core;true
+ANIMAL;Lua;gato;2;Manolo
+CONSULTA;Lua;01/01;08:00;Fernando
+CIRURGIA;Lua;Castração;02/01;10:00;Fernando;false
+EXAME;Lua;Raio-X;03/01;11:00;Pendente

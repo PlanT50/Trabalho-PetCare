@@ -44,7 +44,11 @@ public class Main {
                     case 12: verificarCirurgias(); break;
                     case 13: exibirHistoricoAnimal(); break;
                     case 14: efetuarPagamento(); break;
-                    case 15:
+                    case 15: editarProprietario(); break;
+                    case 16: editarAnimal(); break;
+                    case 17: excluirProprietario(); break;
+                    case 18: excluirAnimal(); break;
+                    case 0:
                         DataManager.salvar(proprietarios, animais, consultas, cirurgias, exames, vacinas, pagamentos);
                         System.out.println("Sistema encerrado");
                         System.out.println("\n Sistema PetCare encerrado"); break;
@@ -64,30 +68,44 @@ public class Main {
         System.out.println("\n╔════════════════════════════════════════════╗");
         System.out.println("║         SISTEMA PETCARE - MENU             ║");
         System.out.println("╚════════════════════════════════════════════╝");
+
         System.out.println("  CADASTROS");
         System.out.println("  1  - Cadastrar Proprietário");
         System.out.println("  2  - Cadastrar Animal");
+
         System.out.println("\n  AGENDAMENTOS");
         System.out.println("  3  - Agendar Consulta");
         System.out.println("  4  - Agendar Cirurgia");
         System.out.println("  5  - Agendar Exame Laboratorial");
+
         System.out.println("\n  VACINAÇÃO");
         System.out.println("  6  - Registrar Vacina");
-        System.out.println("  7 - Emitir Certificado de Vacinação");
-        System.out.println("  8 - Verificar Lembretes de Vacinação");
+        System.out.println("  7  - Emitir Certificado de Vacinação");
+        System.out.println("  8  - Verificar Lembretes de Vacinação");
+
         System.out.println("\n  EXAMES E RESULTADOS");
         System.out.println("  9  - Registrar Resultado de Exame");
         System.out.println("  10 - Ver Exames Agendados");
+
         System.out.println("\n  CONSULTAS");
-        System.out.println("  11  - Ver Consultas Agendadas");
-        System.out.println("  12  - Ver Cirurgias Agendadas");
+        System.out.println("  11 - Ver Consultas Agendadas");
+        System.out.println("  12 - Ver Cirurgias Agendadas");
         System.out.println("  13 - Ver Histórico Completo de Animal");
+
         System.out.println("\n  PAGAMENTOS");
         System.out.println("  14 - Efetuar Pagamento");
-        System.out.println("\n  15 - Sair");
+
+        System.out.println("\n  EDIÇÃO / EXCLUSÃO");
+        System.out.println("  15 - Editar Proprietário");
+        System.out.println("  16 - Editar Animal");
+        System.out.println("  17 - Excluir Proprietário");
+        System.out.println("  18 - Excluir Animal");
+
+        System.out.println("\n  0 - Sair");
         System.out.println("════════════════════════════════════════════");
         System.out.print("Escolha uma opção: ");
     }
+
 
     private static void cadastrarProprietario() {
         System.out.println("\n===== CADASTRO DE PROPRIETÁRIO =====");
